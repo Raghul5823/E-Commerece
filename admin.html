@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - SWIFTCART</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Admin Panel</h1>
+
+  <!-- Admin Login Section -->
+  <div id="loginSection" class="section active">
+    <h2>Admin Login</h2>
+    <form id="adminLoginForm">
+      <label for="adminEmail">Admin Email</label>
+      <input type="email" id="adminEmail" value="raghul1234@store.com" placeholder="Admin Email" required>
+      <label for="adminPassword">Password</label>
+      <input type="password" id="adminPassword" value="raghul@1234" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div id="loginMessage" class="message"></div>
+  </div>
+
+  <!-- Admin Panel Section -->
+  <div id="adminPanel" class="section">
+    <nav>
+      <a href="#" onclick="showCategory('electronics')">Electronics</a>
+      <a href="#" onclick="showCategory('fashion')">Fashion</a>
+      <a href="#" onclick="showCategory('furniture')">Furniture</a>
+      <a href="#" onclick="showCategory('cosmetics')">Cosmetics</a>
+      <a href="#" onclick="showCategory('foodAndHealth')">Food and Health</a>
+      <a href="#" onclick="showCategory('payment')">Payment</a>
+      <a href="#" onclick="showCategory('transactionHistory')">Transaction History Report</a>
+     
+      <a href="#" onclick="showCategory('topCustomers')">Top Customers Report</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <!-- Electronics Section -->
+    <div id="electronics" class="category-section">
+      <h2>Add/Update Electronics</h2>
+      <form id="electronicsForm">
+        <label for="electronicsProductId">Product ID</label>
+        <input type="text" id="electronicsProductId" placeholder="Product ID (e.g., P001)" required>
+        <label for="electronicsName">Product Name</label>
+        <input type="text" id="electronicsName" placeholder="Product Name" required>
+        <label for="electronicsDescription">Description</label>
+        <input type="text" id="electronicsDescription" placeholder="Description" required>
+        <label for="electronicsBrand">Brand</label>
+        <input type="text" id="electronicsBrand" placeholder="Brand" required>
+        <label for="electronicsImageURLs">Image URLs</label>
+        <input type="text" id="electronicsImageURLs" placeholder="Image URLs (comma-separated)">
+        <label for="electronicsDisplay">Display</label>
+        <input type="text" id="electronicsDisplay" placeholder="Display">
+        <label for="electronicsProcessor">Processor</label>
+        <input type="text" id="electronicsProcessor" placeholder="Processor">
+        <label for="electronicsBattery">Battery</label>
+        <input type="text" id="electronicsBattery" placeholder="Battery">
+        <label for="electronicsPrice">Price</label>
+        <input type="number" id="electronicsPrice" placeholder="Price" required>
+        <label for="electronicsAvailability">Availability</label>
+        <input type="number" id="electronicsAvailability" placeholder="Availability" required>
+        <label for="electronicsIsActive">Is Active</label>
+        <input type="checkbox" id="electronicsIsActive" checked> 
+        <button type="submit">Add/Update Product</button>
+      </form>
+      <div id="electronicsMessage" class="message"></div>
+    </div>
+
+    <!-- Fashion Section -->
+    <div id="fashion" class="category-section">
+      <h2>Add/Update Fashion</h2>
+      <form id="fashionForm">
+        <label for="fashionProductId">Product ID</label>
+        <input type="text" id="fashionProductId" placeholder="Product ID (e.g., P002)" required>
+        <label for="fashionName">Product Name</label>
+        <input type="text" id="fashionName" placeholder="Product Name" required>
+        <label for="fashionDescription">Description</label>
+        <input type="text" id="fashionDescription" placeholder="Description" required>
+        <label for="fashionBrand">Brand</label>
+        <input type="text" id="fashionBrand" placeholder="Brand" required>
+        <label for="fashionImageURLs">Image URLs</label>
+        <input type="text" id="fashionImageURLs" placeholder="Image URLs (comma-separated)">
+        <label for="fashionSize">Size</label>
+        <input type="text" id="fashionSize" placeholder="Size (e.g., S, M, L)">
+        <label for="fashionColor">Color</label>
+        <input type="text" id="fashionColor" placeholder="Color">
+        <label for="fashionMaterial">Material</label>
+        <input type="text" id="fashionMaterial" placeholder="Material">
+        <label for="fashionPrice">Price</label>
+        <input type="number" id="fashionPrice" placeholder="Price" required>
+        <label for="fashionDiscountPrice">Discount Price</label>
+        <input type="number" id="fashionDiscountPrice" placeholder="Discount Price">
+        <label for="fashionWarehouseId">Warehouse ID</label>
+        <input type="text" id="fashionWarehouseId" placeholder="Warehouse ID" required>
+        <label for="fashionStock">Stock</label>
+        <input type="number" id="fashionStock" placeholder="Stock" required>
+        <label for="fashionSoldBy">Sold By</label>
+        <input type="text" id="fashionSoldBy" placeholder="Sold By" required>
+        <label for="fashionAvailability">Availability</label>
+        <input type="number" id="fashionAvailability" placeholder="Availability" required>
+        <label for="fashionIsActive">Is Active</label>
+        <select id="fashionIsActive" required>
+          <option value="true">Active</option>
+          <option value="false">Not Active</option>
+        </select>
+        <button type="submit">Add/Update Product</button>
+      </form>
+      <div id="fashionMessage" class="message"></div>
+    </div>
+
+    <!-- Furniture Section -->
+    <div id="furniture" class="category-section">
+      <h2>Add/Update Furniture</h2>
+      <form id="furnitureForm">
+        <label for="furnitureProductId">Product ID</label>
+        <input type="text" id="furnitureProductId" placeholder="Product ID (e.g., P003)" required>
+        <label for="furnitureName">Product Name</label>
+        <input type="text" id="furnitureName" placeholder="Product Name" required>
+        <label for="furnitureDescription">Description</label>
+        <input type="text" id="furnitureDescription" placeholder="Description" required>
+        <label for="furnitureBrand">Brand</label>
+        <input type="text" id="furnitureBrand" placeholder="Brand" required>
+        <label for="furnitureImageURLs">Image URLs</label>
+        <input type="text" id="furnitureImageURLs" placeholder="Image URLs (comma-separated)">
+        <label for="furnitureDimensions">Dimensions</label>
+        <input type="text" id="furnitureDimensions" placeholder="Dimensions (e.g., 20x30x40)">
+        <label for="furnitureMaterial">Material</label>
+        <input type="text" id="furnitureMaterial" placeholder="Material">
+        <label for="furnitureWeight">Weight (kg)</label>
+        <input type="number" id="furnitureWeight" placeholder="Weight (kg)">
+        <label for="furniturePrice">Price</label>
+        <input type="number" id="furniturePrice" placeholder="Price" required>
+        <label for="furnitureDiscountPrice">Discount Price</label>
+        <input type="number" id="furnitureDiscountPrice" placeholder="Discount Price">
+        <label for="furnitureWarehouseId">Warehouse ID</label>
+        <input type="text" id="furnitureWarehouseId" placeholder="Warehouse ID" required>
+        <label for="furnitureStock">Stock</label>
+        <input type="number" id="furnitureStock" placeholder="Stock" required>
+        <label for="furnitureSoldBy">Sold By</label>
+        <input type="text" id="furnitureSoldBy" placeholder="Sold By" required>
+        <label for="furnitureAvailability">Availability</label>
+        <input type="number" id="furnitureAvailability" placeholder="Availability" required>
+        <label for="furnitureIsActive">Is Active</label>
+        <select id="furnitureIsActive" required>
+          <option value="true">Active</option>
+          <option value="false">Not Active</option>
+        </select>
+        <button type="submit">Add/Update Product</button>
+      </form>
+      <div id="furnitureMessage" class="message"></div>
+    </div>
+
+    <!-- Cosmetics Section -->
+    <div id="cosmetics" class="category-section">
+      <h2>Add/Update Cosmetics</h2>
+      <form id="cosmeticsForm">
+        <label for="cosmeticsProductId">Product ID</label>
+        <input type="text" id="cosmeticsProductId" placeholder="Product ID (e.g., P004)" required>
+        <label for="cosmeticsName">Product Name</label>
+        <input type="text" id="cosmeticsName" placeholder="Product Name" required>
+        <label for="cosmeticsDescription">Description</label>
+        <input type="text" id="cosmeticsDescription" placeholder="Description" required>
+        <label for="cosmeticsBrand">Brand</label>
+        <input type="text" id="cosmeticsBrand" placeholder="Brand" required>
+        <label for="cosmeticsImageURLs">Image URLs</label>
+        <input type="text" id="cosmeticsImageURLs" placeholder="Image URLs (comma-separated)">
+        <label for="cosmeticsType">Type</label>
+        <input type="text" id="cosmeticsType" placeholder="Type (e.g., Lipstick, Cream)">
+        <label for="cosmeticsIngredients">Ingredients</label>
+        <input type="text" id="cosmeticsIngredients" placeholder="Ingredients (comma-separated)">
+        <label for="cosmeticsExpirationDate">Expiration Date</label>
+        <input type="date" id="cosmeticsExpirationDate" placeholder="Expiration Date">
+        <label for="cosmeticsPrice">Price</label>
+        <input type="number" id="cosmeticsPrice" placeholder="Price" required>
+        <label for="cosmeticsDiscountPrice">Discount Price</label>
+        <input type="number" id="cosmeticsDiscountPrice" placeholder="Discount Price">
+        <label for="cosmeticsWarehouseId">Warehouse ID</label>
+        <input type="text" id="cosmeticsWarehouseId" placeholder="Warehouse ID" required>
+        <label for="cosmeticsStock">Stock</label>
+        <input type="number" id="cosmeticsStock" placeholder="Stock" required>
+        <label for="cosmeticsSoldBy">Sold By</label>
+        <input type="text" id="cosmeticsSoldBy" placeholder="Sold By" required>
+        <label for="cosmeticsAvailability">Availability</label>
+        <input type="number" id="cosmeticsAvailability" placeholder="Availability" required>
+        <label for="cosmeticsIsActive">Is Active</label>
+        <select id="cosmeticsIsActive" required>
+          <option value="true">Active</option>
+          <option value="false">Not Active</option>
+        </select>
+        <button type="submit">Add/Update Product</button>
+      </form>
+      <div id="cosmeticsMessage" class="message"></div>
+    </div>
+
+    <!-- Food and Health Section -->
+    <div id="foodAndHealth" class="category-section">
+      <h2>Add/Update Food and Health</h2>
+      <form id="foodAndHealthForm">
+        <label for="foodAndHealthProductId">Product ID</label>
+        <input type="text" id="foodAndHealthProductId" placeholder="Product ID (e.g., P005)" required>
+        <label for="foodAndHealthName">Product Name</label>
+        <input type="text" id="foodAndHealthName" placeholder="Product Name" required>
+        <label for="foodAndHealthDescription">Description</label>
+        <input type="text" id="foodAndHealthDescription" placeholder="Description" required>
+        <label for="foodAndHealthBrand">Brand</label>
+        <input type="text" id="foodAndHealthBrand" placeholder="Brand" required>
+        <label for="foodAndHealthImageURLs">Image URLs</label>
+        <input type="text" id="foodAndHealthImageURLs" placeholder="Image URLs (comma-separated)">
+        <label for="foodAndHealthType">Type</label>
+        <input type="text" id="foodAndHealthType" placeholder="Type (e.g., Supplement, Snack)">
+        <label for="foodAndHealthNutritionalInfo">Nutritional Info</label>
+        <input type="text" id="foodAndHealthNutritionalInfo" placeholder="Nutritional Info">
+        <label for="foodAndHealthShelfLife">Shelf Life</label>
+        <input type="text" id="foodAndHealthShelfLife" placeholder="Shelf Life (e.g., 12 months)">
+        <label for="foodAndHealthPrice">Price</label>
+        <input type="number" id="foodAndHealthPrice" placeholder="Price" required>
+        <label for="foodAndHealthDiscountPrice">Discount Price</label>
+        <input type="number" id="foodAndHealthDiscountPrice" placeholder="Discount Price">
+        <label for="foodAndHealthWarehouseId">Warehouse ID</label>
+        <input type="text" id="foodAndHealthWarehouseId" placeholder="Warehouse ID" required>
+        <label for="foodAndHealthStock">Stock</label>
+        <input type="number" id="foodAndHealthStock" placeholder="Stock" required>
+        <label for="foodAndHealthSoldBy">Sold By</label>
+        <input type="text" id="foodAndHealthSoldBy" placeholder="Sold By" required>
+        <label for="foodAndHealthAvailability">Availability</label>
+        <input type="number" id="foodAndHealthAvailability" placeholder="Availability" required>
+        <label for="foodAndHealthIsActive">Is Active</label>
+        <select id="foodAndHealthIsActive" required>
+          <option value="true">Active</option>
+          <option value="false">Not Active</option>
+        </select>
+        <button type="submit">Add/Update Product</button>
+      </form>
+      <div id="foodAndHealthMessage" class="message"></div>
+    </div>
+
+    <!-- Fetch Product for Update -->
+    <h2>Fetch Product for Update</h2>
+    <form id="fetchProductForm">
+      <label for="fetchProductId">Product ID</label>
+      <input type="text" id="fetchProductId" placeholder="Product ID" required>
+      <button type="submit">Fetch Product</button>
+    </form>
+
+    <!-- Delete Product -->
+    <h2>Delete Product</h2>
+    <form id="deleteProductForm">
+      <label for="deleteProductId">Product ID</label>
+      <input type="text" id="deleteProductId" placeholder="Product ID" required>
+      <button type="submit">Delete</button>
+    </form>
+
+    <!-- Display Products by Category -->
+    <h2>View Products by Category</h2>
+    <div id="adminProductsList"></div>
+
+    <!-- Payment Section (New Separate Form) -->
+    <div id="payment" class="category-section">
+      <h2>Process Payment</h2>
+      <form id="paymentForm" class="payment-form">
+        <label for="orderId">Order ID</label>
+        <input type="text" id="orderId" placeholder="Order ID" required>
+        <label for="paymentAmount">Amount</label>
+        <input type="number" id="paymentAmount" placeholder="Amount" step="0.01" required>
+        <div class="payment-methods">
+          <div class="payment-option" data-method="credit">
+            <span>Credit Card</span>
+          </div>
+          <div class="payment-option" data-method="paypal">
+            <span>PayPal</span>
+          </div>
+          <div class="payment-option" data-method="cash">
+            <span>Cash</span>
+          </div>
+        </div>
+        <input type="hidden" id="paymentMethod" name="paymentMethod" required>
+        <button type="submit">Process Payment</button>
+      </form>
+      <div id="paymentMessage" class="message"></div>
+    </div>
+
+    <!-- Transaction History Section -->
+    <div id="transactionHistory" class="category-section">
+      <h2>Transaction History</h2>
+      <div id="transactionHistoryReport"></div>
+      <div class="pagination">
+        <button id="transactionPrev" disabled>Previous</button>
+        <span id="transactionPageInfo"></span>
+        <button id="transactionNext">Next</button>
+      </div>
+    </div>
+    
+    <!-- Top 5 Customers Section -->
+    <div id="topCustomers" class="category-section">
+      <h2>Top 5 Customers</h2>
+      <div id="topCustomersReport"></div>
+      <div class="pagination">
+        <button id="customersPrev" disabled>Previous</button>
+        <span id="customersPageInfo"></span>
+        <button id="customersNext">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK Scripts -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
